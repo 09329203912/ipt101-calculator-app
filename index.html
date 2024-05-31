@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    .Calcu {
+      background-color: 	#C0C0C0;
+      width: 24%;
+      margin-left: auto;
+      margin-right: auto;
+      height: 70vh;
+      border: solid black 2px;
+      border-radius: 20px;
+    }
+
+    .Calcu:hover {
+      background-color: #E0E0E0; 
+    }
+
+    .name {
+      color: aqua;
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .Button {
+      padding: 20px;
+      border-radius: 10px;
+      width: 70px;
+      height: 10%;
+      border: none;
+      border: 1px black solid ;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+    } 
+
+    .Button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); 
+    } 
+
+    .Button:active {
+      transform: translateY(-2x);
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); 
+    }
+
+    #int {
+      width: 276px;
+      margin-top: 40px;
+      margin-left: 33px;
+      padding: 17px;
+      border-radius: 15px;
+      border: solid black 2px;
+      text-align: right;
+      font-size: 20px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    #int:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); 
+    }
+
+    #int:active {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); 
+    }
+
+    .gif {
+      width: 20%;
+      height: 20%;
+      margin-left: 40%;
+    }
+
+    @media screen and (max-width: 1349px) {
+      .Calcu {
+        width: 28%;
+      }
+    }
+
+    @media screen and (max-width: 1301px) {
+      .Calcu {
+        width: 30%;
+      }
+    }
+
+    @media screen and (max-width: 1193px) {
+      .Calcu {
+        width: 32%;
+      }
+    }
+
+    @media screen and (max-width: 1084px) {
+      .Calcu {
+        width: 35%;
+      }
+    }
+
+    @media screen and (max-width: 1000px) {
+      .Calcu {
+        width: 38%;
+      }
+    }
+
+    @media screen and (max-width: 915px) {
+      .Calcu {
+        width: 42%;
+      }
+    }
+
+    @media screen and (max-width: 850px) {
+      .Calcu {
+        width: 46%;
+      }
+    }
+
+    @media screen and (max-width: 760px) {
+      .Calcu {
+        width: 50%;
+      }
+    }
+
+    @media screen and (max-width: 700px) {
+      .Calcu {
+        width: 55%;
+      }
+    }
+
+    @media screen and (max-width: 637px) {
+      .Calcu {
+        width: 60%;
+      }
+    }
+
+    @media screen and (max-width: 585px) {
+      .Calcu {
+        width: 67%;
+      }
+      
+      .gif {
+        width: 30%;
+        height: 30%;
+        margin-left: 37%;
+      }
+    }
+
+    @media screen and (max-width: 525px) {
+      .Calcu {
+        width: 73%;
+      }
+    }
+
+    @media screen and (max-width: 482px) {
+      .Calcu {
+        width: 78%;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .Calcu {
+        width: 80%;
+      }
+      
+      .gif {
+        width: 35%;
+        height: 35%;
+        margin-left: 35%;
+      }
+
+      .Calcu {
+        background-color: wheat;
+      }
+
+    }
+
+    @media screen and (max-width: 410px) {
+      .Calcu {
+        width: 95%;
+      }
+      
+      .gif {
+        width: 40%;
+        height: 40%;
+        margin-left: 30%;
+      }
+
+      .Calcu {
+        background-color: wheat;
+      }
+
+    }
+
+
+
+  </style>
+</head>
+<body style="background-color: 	#101010">
+  <img class="gif" src="calcu.gif" alt="gif">
+  <div class="Calcu">
+    <div>
+      <input type="text" id="int">
+    </div>
+    <div>
+      <input type="button" value="C" class="Button" style="background-color: 	#8B9DC3; margin-left: 35px; margin-top: 30px;" onclick="clearInput()">
+      <input type="button" value="DEL" class="Button" style="background-color: 	#8B9DC3; margin-left: 5px; margin-top: 30px;" onclick="deleteInput()">
+      <input type="button" value="-" class="Button" style="background-color: 	#8B9DC3; margin-left: 5px; margin-top: 30px;"onclick= "minus()">
+      <input type="button" value="*" class="Button" style="background-color: 	#8B9DC3; margin-left: 5px; margin-top: 30px;"onclick= "times()">
+    </div><br>
+    <div>
+      <input type="button" value="7" class="Button" style="background-color: 	#606060; margin-left: 35px;"onclick="num(7)">
+      <input type="button" value="8" class="Button" style="background-color: 	#606060; margin-left: 5px;"onclick="num(8)">
+      <input type="button" value="9" class="Button" style="background-color: 	#606060; margin-left: 5px;"onclick="num(9)">
+      <input type="button" value="/" class="Button" style="background-color: 	#8B9DC3; margin-left: 5px;"onclick= "divide()">
+    </div><br>
+    <div>
+      <input type="button" value="4" class="Button" style="background-color: 	#606060; margin-left: 35px;"onclick="num(4)" >
+      <input type="button" value="5" class="Button" style="background-color: 	#606060; margin-left: 5px;"onclick="num(5)">
+      <input type="button" value="6" class="Button" style="background-color: 	#606060; margin-left: 5px;"onclick="num(6)">
+      <input type="button" value="+" class="Button" style="background-color: 	#8B9DC3; margin-left: 5px;"onclick= "add()">
+    </div><br>
+    <div>
+      <input type="button" value="1" class="Button" style="background-color: 	#606060; margin-left: 35px;"onclick="num(1)" >
+      <input type="button" value="2" class="Button" style="background-color: 	#606060; margin-left: 5px;"onclick="num(2)">
+      <input type="button" value="3" class="Button" style="background-color: 	#606060; margin-left: 5px;"onclick="num(3)">
+      <input type="button" value="." class="Button" style="background-color: 	#8B9DC3; margin-left: 5px;"onclick="num('.')">  
+    </div><br>
+    <div>
+      <input type="button" value="0" class="Button" style="background-color: 	#606060; margin-left: 35px;"onclick="num(0)">
+      <input type="button" value="=" class="Button" style="background-color: 	#3B5998; margin-left: 5px; width: 148px;"onclick="equal()">
+      <input type="button" value="00" class="Button" style="background-color: 	#606060; margin-left: 5px;"onclick="num('00')">
+    </div>
+  </div>
+  <script>
+    let inputs = "";  
+    let operators = "";
+    const result = document.getElementById("int")
+
+    function num (number) {
+      inputs +=  number;
+      result.value = inputs;
+    }
+
+    function add() {
+      operators = "+";
+      inputs += operators;
+      result.value = inputs;
+    }
+
+    function minus() {
+      operators = "-";
+      inputs += operators;
+      result.value = inputs;
+    }
+
+    function times() {
+      operators = "*";
+      inputs += operators;
+      result.value = inputs;
+    }
+
+    function divide() {
+      operators = "/";
+      inputs += operators;
+      document.getElementById("int").value = inputs;
+    }
+
+    function equal() {
+      const int = eval(inputs);
+      result.value = int;
+      operators = "";
+      inputs = int.toString();
+
+    }
+
+    function clearInput() {
+      inputs = "";
+      operators = "";
+      result.value= "";
+    }
+
+    function deleteInput() {
+      inputs = inputs.slice(0, -1);
+      result.value = inputs;
+    }
+
+
+  </script>
+</body>
+</html>
